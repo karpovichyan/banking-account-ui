@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {RegisterForm} from '../model/register-form';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {environment} from '../../environments/environment';
+import {LoginForm} from '../model/login-form';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
@@ -9,6 +11,10 @@ export class AuthService {
   }
 
   register(registerForm: RegisterForm): Observable<void> {
-    return this.http.post<void>('http://localhost:8080/api/register', registerForm);
+    return this.http.post<void>(`${environment.apiUrl}/register`, registerForm);
+  }
+
+  login(loginForm: LoginForm): Observable<boolean> {
+    return this.http.post<boolean>(`${environment.apiUrl}/login`, loginForm);
   }
 }

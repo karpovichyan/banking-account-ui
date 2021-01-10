@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {LoginForm} from '../model/login-form';
+import {AuthService} from '../service/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +12,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class LoginComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -19,19 +22,21 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  async onSubmit() {
-    /*this.loginInvalid = false;
-    this.formSubmitAttempt = false;
-    if (this.form.valid) {
-      try {
-        const username = this.form.get('username').value;
-        const password = this.form.get('password').value;
-        await this.authService.login(username, password);
-      } catch (err) {
-        this.loginInvalid = true;
+  onSubmit() {
+    const loginForm: LoginForm = {
+      email: this.form.get('email').value,
+      password: this.form.get('password').value,
+    };
+    this.authService.login(loginForm).subscribe(id => {
+      console.log(id);
+      this.router.navigate(['home']);
+    }, error => {
+      if (error.status === 404) {
+        this.form.get('email').setErrors({userNotFound: true});
       }
-    } else {
-      this.formSubmitAttempt = true;
-    }*/
+      if (error.status === 401) {
+        this.form.get('password').setErrors({wrongPassword: true});
+      }
+    });
   }
 }

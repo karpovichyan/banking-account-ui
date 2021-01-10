@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
         email: this.form.get('email').value,
         password: this.form.get('password').value,
       };
-      this.authService.register(registerFrom).subscribe(a => this.router.navigate(['/login']));
+      this.authService.register(registerFrom).subscribe(_ => this.router.navigate(['/login']));
     }
   }
 }
