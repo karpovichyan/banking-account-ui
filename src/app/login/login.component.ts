@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       password: this.form.get('password').value,
     };
     this.authService.login(loginForm).subscribe(id => {
-      console.log(id);
+      localStorage.setItem('userId', `${id}`);
       this.router.navigate(['home']);
     }, error => {
       if (error.status === 404) {
