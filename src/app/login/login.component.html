@@ -1,27 +1,37 @@
-<mat-card>
-  <mat-card-content>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <h2>Log In</h2>
-      <mat-form-field class="full-width-input">
-        <input matInput placeholder="Email" formControlName="email" required>
-        <mat-error *ngIf="form.controls['email'].errors?.required">
-          Please provide a valid email address
-        </mat-error>
-        <mat-error *ngIf="form.controls['email'].errors?.userNotFound">
-          User not found
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="full-width-input">
-        <input matInput type="password" placeholder="Password" formControlName="password" required>
-        <mat-error *ngIf="form.controls['password'].errors?.required">
-          Please provide a valid password
-        </mat-error>
-        <mat-error *ngIf="form.controls['password'].errors?.wrongPassword">
-          Wrong password
-        </mat-error>
-      </mat-form-field>
-      <button mat-raised-button color="primary" [disabled]="!form.valid">Login</button>
-      <button mat-raised-button color="primary" [routerLink]="'/register'">Registration</button>
-    </form>
-  </mat-card-content>
-</mat-card>
+<div class="signin-content">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h2>Log In</h2>
+        <div class="login-content">
+          <mat-form-field class="full-width-input">
+            <input matInput placeholder="Email" formControlName="email" required>
+            <mat-error *ngIf="form.controls['email'].errors?.required">
+              Please provide a valid email address
+            </mat-error>
+            <mat-error *ngIf="form.controls['email'].errors?.userNotFound">
+              User not found
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <input matInput type="password" placeholder="Password" formControlName="password" required>
+            <mat-error *ngIf="form.controls['password'].errors?.required">
+              Please provide a valid password
+            </mat-error>
+            <mat-error *ngIf="form.controls['password'].errors?.wrongPassword">
+              Wrong password
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <button class="login-button" mat-raised-button color="primary" [disabled]="!form.valid">Login</button>
+        <div class = "register-block">
+          <span>
+            Not registered?
+          </span>
+          &nbsp;
+          <a [routerLink]="'/register'">Create an account</a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

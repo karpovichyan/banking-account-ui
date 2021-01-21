@@ -7,3 +7,9 @@ mat-card {
 mat-form-field {
   display: block;
 }
+.register-content {
+  padding: 60px 1rem;
+}
+.full-width-input {
+  width: 100%;
+}

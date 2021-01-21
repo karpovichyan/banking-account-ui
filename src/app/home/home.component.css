@@ -1,3 +1,119 @@
-.center-welcome {
+/* Header Section */
+.intro {
+  display: table;
+  width: 100%;
+  padding: 0;
+  background: url(../../assets/img/Business-bank-cards.jpg) center center no-repeat;
+  background-color: #e5e5e5;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.intro .overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.intro h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 62px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5)
+}
+
+.intro p {
+  color: #fff;
+  font-size: 17px;
+  line-height: 28px;
+  padding: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  background: rgba(0, 0, 0, .45);
+}
+
+header .intro-text {
+  padding-top: 350px;
+  padding-bottom: 150px;
   text-align: center;
+}
+
+.btn-custom {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #e52f3c;
+  padding: 14px 20px;
+  letter-spacing: 1px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+/* Get Touch Section */
+#get-touch {
+  padding: 40px 0 30px;
+  color: rgba(255, 255, 255, .7);
+  background: #1f386e;
+}
+
+#get-touch h3 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 10px 0;
+}
+
+#get-touch .btn-custom {
+  margin: 0;
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+#get-touch .btn-custom:hover {
+  color: #1f386e;
+  background: #fff;
+  border: 2px solid #fff;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  #about img {
+    margin: 50px 0;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Footer Section*/
+#footer {
+  background: #f6f6f6;
+  padding: 30px 0;
+  text-align: center;
+}
+
+#footer p {
+  color: #888;
+  font-size: 14px;
+}
+
+#footer a {
+  color: #1f386e;
+}
+
+#footer a:hover {
+  color: #e52f3c;
 }

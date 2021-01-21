@@ -7,3 +7,24 @@ mat-card {
 mat-form-field {
   display: block;
 }
+
+.signin-content {
+  padding: 60px 1rem;
+}
+
+.full-width-input {
+  width: 100%;
+}
+
+.login-content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.login-button {
+  width: 220px;
+}
+
+.register-block {
+  margin-top: 10px;
+}
