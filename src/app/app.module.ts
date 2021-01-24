@@ -14,6 +14,11 @@ import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { AccountPreviewComponent } from './home/account-preview/account-preview.component';
+import { AccountContentComponent } from './home/account-content/account-content.component';
+import { NoAccountComponent } from './home/no-account/no-account.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +26,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    AccountPreviewComponent,
+    AccountContentComponent,
+    NoAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatButtonModule,
     AppRoutingModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

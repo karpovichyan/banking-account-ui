@@ -1,0 +1,8 @@
+.account-card {
+  max-width: 400px;
+}
+
+.account-header-image {
+  background-image: url('../../../assets/img/Business_Finance_Money1_1.svg');
+  background-size: cover;
+}

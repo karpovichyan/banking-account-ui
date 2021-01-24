@@ -117,3 +117,8 @@ header .intro-text {
 #footer a:hover {
   color: #e52f3c;
 }
+.account-content {
+  margin: 15px;
+  height: 100%;
+  width: 85%;
+}

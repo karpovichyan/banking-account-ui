@@ -1,35 +1,14 @@
-<app-menu></app-menu>
+<div *ngIf="!isAccountExist()">
+  <app-no-account fxLayout="column" fxLayoutAlign="center center"></app-no-account>
+</div>
+<div *ngIf="isAccountExist()" fxFlexFill fxLayout="row" fxLayoutAlign="space-evenly stretch">
+  <div fxFlex="20" fxLayout="column" fxLayoutAlign="space-around start">
+    <app-account-preview></app-account-preview>
+    <app-account-preview></app-account-preview>
+  </div>
+  <div fxFlex="80" fxLayout="column" fxLayoutAlign="center center">
+    <app-account-content class="account-content"></app-account-content>
+  </div>
+</div>
 
-<!-- Header -->
-<header id="header">
-  <div class="intro">
-    <div class="overlay">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2 intro-text">
-            <h1>Home Construction
-              </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed
-              commodo nibh ante facilisis bibendum dolor feugiat at.</p>
-            <button mat-button class="btn-custom">Learn More</button></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-<!-- Get Touch Section -->
-<div id="get-touch">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-6 col-md-offset-1">
-        <h3>Cost for your home renovation project</h3>
-        <p>Get started today and complete our form to request your free estimate</p>
-      </div>
-      <div class="col-xs-12 col-md-4 text-center"><a href="#contact" class="btn btn-custom btn-lg page-scroll">Free Estimate</a></div>
-    </div>
-  </div>
-</div>
-<!-- Footer Section -->
-<div id="footer">
-    <p>&copy; 2021 Banking. Design by <a href="https://www.linkedin.com/in/karpovichyan" rel="nofollow">Karpovich Yan</a></p>
-</div>
+
