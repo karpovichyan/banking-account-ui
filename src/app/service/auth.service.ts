@@ -14,7 +14,7 @@ export class AuthService {
     return this.http.post<void>(`${environment.apiUrl}/register`, registerForm);
   }
 
-  login(loginForm: LoginForm): Observable<boolean> {
-    return this.http.post<boolean>(`${environment.apiUrl}/login`, loginForm);
+  login(loginForm: LoginForm): Observable<number> {
+    return this.http.post<number>(`${environment.apiUrl}/login`, loginForm);
   }
 }

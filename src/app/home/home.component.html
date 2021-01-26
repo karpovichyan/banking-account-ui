@@ -1,7 +1,7 @@
-<div *ngIf="!isAccountExist()">
+<div *ngIf="!isAccountExist">
   <app-no-account fxLayout="column" fxLayoutAlign="center center"></app-no-account>
 </div>
-<div *ngIf="isAccountExist()" fxFlexFill fxLayout="row" fxLayoutAlign="space-evenly stretch">
+<div *ngIf="isAccountExist" fxFlexFill fxLayout="row" fxLayoutAlign="space-evenly stretch">
   <div fxFlex="20" fxLayout="column" fxLayoutAlign="space-around start">
     <app-account-preview></app-account-preview>
     <app-account-preview></app-account-preview>

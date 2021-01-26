@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AccountService} from '../service/account.service';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  isAccountExist: boolean;
+  constructor(private accountService: AccountService) {
   }
 
-  isAccountExist() {
-    return true;
+  ngOnInit(): void {
+    const userId = localStorage.getItem('userId');
+    this.accountService.isAccountExist(userId).subscribe(result => this.isAccountExist = result);
   }
 }
