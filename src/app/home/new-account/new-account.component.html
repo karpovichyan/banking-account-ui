@@ -1,0 +1,17 @@
+<div fxLayoutAlign="center center">
+<mat-card  fxLayout="column" fxLayoutAlign="space-between">
+  <mat-card-header fxLayoutAlign="center">
+    <mat-card-title>Create account</mat-card-title>
+    <mat-card-subtitle>What type of account do you want to create?</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content fxFlex fxLayoutAlign="center">
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="SAVING" (change)="onChange($event)" checked>Saving</mat-radio-button>
+      <mat-radio-button value="CHECKING" (change)="onChange($event)">Checking</mat-radio-button>
+    </mat-radio-group>
+  </mat-card-content>
+  <mat-card-actions fxLayoutAlign="center">
+    <button mat-raised-button color="basic" (click)="createAccount()">Create</button>
+  </mat-card-actions>
+</mat-card>
+</div>>

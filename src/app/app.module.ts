@@ -18,6 +18,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { AccountPreviewComponent } from './home/account-preview/account-preview.component';
 import { AccountContentComponent } from './home/account-content/account-content.component';
 import { NoAccountComponent } from './home/no-account/no-account.component';
+import { NewAccountComponent } from './home/new-account/new-account.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { NoAccountComponent } from './home/no-account/no-account.component';
     MenuComponent,
     AccountPreviewComponent,
     AccountContentComponent,
-    NoAccountComponent
+    NoAccountComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { NoAccountComponent } from './home/no-account/no-account.component';
     AppRoutingModule,
     HttpClientModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

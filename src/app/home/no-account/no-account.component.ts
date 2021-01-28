@@ -11,8 +11,4 @@ export class NoAccountComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  createNewAccount() {
-
-  }
 }
