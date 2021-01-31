@@ -1,14 +1,14 @@
-<div *ngIf="!isAccountExist">
+<div *ngIf="userAccounts.length == 0">
   <app-no-account fxLayout="column" fxLayoutAlign="center center"></app-no-account>
 </div>
-<div *ngIf="isAccountExist" fxFlexFill fxLayout="row" fxLayoutAlign="space-evenly stretch">
+<div fxFlexFill fxLayout="row" fxLayoutAlign="space-evenly stretch" *ngIf="userAccounts.length !== 0">
   <div fxFlex="20" fxLayout="column" fxLayoutAlign="space-around start">
-    <app-account-preview></app-account-preview>
-    <app-account-preview></app-account-preview>
+    <div *ngFor="let userAccount of userAccounts">
+      <app-account-preview [userAccount]="userAccount" (selectedUserAccount)="onSelect($event)"></app-account-preview>
+    </div>
   </div>
   <div fxFlex="80" fxLayout="column" fxLayoutAlign="center center">
-    <app-account-content class="account-content"></app-account-content>
+    <app-account-content class="account-content" [userAccount]="selectedUserAccount"
+                         *ngIf="selectedUserAccount"></app-account-content>
   </div>
 </div>
-
-

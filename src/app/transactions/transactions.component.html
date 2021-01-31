@@ -1,0 +1,27 @@
+<div class="signin-content">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h2>New transaction</h2>
+        <div class="transaction-content">
+          <mat-form-field class="full-width-input">
+            <input matInput placeholder="From account" formControlName="fromAccount" required>
+            <mat-error *ngIf="form.controls['fromAccount'].errors?.required">
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <input matInput placeholder="To account" formControlName="toAccount" required>
+            <mat-error *ngIf="form.controls['toAccount'].errors?.required">
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <input matInput placeholder="Amount" formControlName="amount" required>
+            <mat-error *ngIf="form.controls['amount'].errors?.required">
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <button class="transaction-button" mat-raised-button color="primary" [disabled]="!form.valid">Submit</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

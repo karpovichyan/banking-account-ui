@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AccountService} from '../service/account.service';
+import {UserAccount} from '../model/user-account';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,18 @@ import {AccountService} from '../service/account.service';
 })
 export class HomeComponent implements OnInit {
 
-  isAccountExist: boolean;
+  userAccounts: UserAccount[] = [];
+  selectedUserAccount: UserAccount;
+
   constructor(private accountService: AccountService) {
   }
 
   ngOnInit(): void {
     const userId = localStorage.getItem('userId');
-    this.accountService.isAccountExist(userId).subscribe(result => this.isAccountExist = result);
+    this.accountService.getAccountsForUser(userId).subscribe(result => this.userAccounts = result);
+  }
+
+  onSelect(event) {
+    this.selectedUserAccount = event;
   }
 }

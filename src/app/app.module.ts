@@ -20,6 +20,7 @@ import { AccountContentComponent } from './home/account-content/account-content.
 import { NoAccountComponent } from './home/no-account/no-account.component';
 import { NewAccountComponent } from './home/new-account/new-account.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {MatRadioModule} from '@angular/material/radio';
     AccountPreviewComponent,
     AccountContentComponent,
     NoAccountComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,

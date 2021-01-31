@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { EventEmitter } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
+import {UserAccount} from '../../model/user-account';
+
 
 @Component({
   selector: 'app-account-preview',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountPreviewComponent implements OnInit {
 
+  @Input() userAccount: UserAccount;
+  @Output() selectedUserAccount = new EventEmitter<UserAccount>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  showMoreClick() {
+    this.selectedUserAccount.emit(this.userAccount);
+  }
 }

@@ -1,11 +1,11 @@
 <mat-card fxLayout="column" fxLayoutAlign="space-between">
   <mat-card-header fxLayoutAlign="center" fxFlex="10">
-    <mat-card-title>Account</mat-card-title>
-    <mat-card-subtitle>Account Type</mat-card-subtitle>
+    <mat-card-title>Account {{ userAccount.accountId }}</mat-card-title>
+    <mat-card-subtitle>{{ userAccount.accountType }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content fxFlex>
     <div>
-      BALANCE: 500$
+      BALANCE: {{ userAccount.balance }}$
     </div>
   </mat-card-content>
 </mat-card>
