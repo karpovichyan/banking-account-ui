@@ -24,6 +24,7 @@ import {TransactionHistoryComponent} from './home/transaction-history/transactio
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
+import { SettingsComponent } from './settings/settings.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {MatTableModule} from '@angular/material/table';
     NoAccountComponent,
     NewAccountComponent,
     TransactionsComponent,
-    TransactionHistoryComponent
+    TransactionHistoryComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
