@@ -7,6 +7,6 @@
     <div>
       BALANCE: {{ userAccount.balance }}$
     </div>
-    <app-transaction-history></app-transaction-history>
+    <app-transaction-history [accountId]="userAccount.accountId"></app-transaction-history>
   </mat-card-content>
 </mat-card>
